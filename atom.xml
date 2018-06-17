@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://Visow.github.io/"/>
-  <updated>2018-06-17T15:30:13.985Z</updated>
+  <updated>2018-06-17T17:36:25.793Z</updated>
   <id>https://Visow.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本博客搭建方法</title>
+    <link href="https://Visow.github.io/2018/06/18/2018-6-17/"/>
+    <id>https://Visow.github.io/2018/06/18/2018-6-17/</id>
+    <published>2018-06-17T17:12:25.000Z</published>
+    <updated>2018-06-17T17:36:25.793Z</updated>
+    
+    <content type="html"><![CDATA[<p>##说在前面<br>本博客是使用Hexo + gitHub搭建的个人博客。其中致谢于以下俩位道友：<br>csdn z皓: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">使用Hexo+github一步步搭建数以自己的博客</a><br>主题提供者 yscoder:<a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="noopener">一个Material Design风格的Hexo主题。</a><br>首先是Hexo+gitHub的使用安装及配置问题。由于z道友教程中内容比较详细，所以这边不做赘述。再次感谢道友提供的教程。<br>然后第二部分是主题的安装。</p><p>##技术准备</p><p>###Node.js 6.x+<br>使用本博客需要6.x+以上版本的Node.js<br><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>Node相关安装教程请自行百度或者谷歌，如需帮助请邮件。</p><p>###GitHub<br>通过gitHub的page来作为博客的站点，可以使用自己的服务器或者其他服务器来搭建。</p><p>##流程</p><p>###安装Git<br><a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="noopener">git官网</a><br><a href="https://pan.baidu.com/s/1H50aC_kApHGeXa4godkn3w" target="_blank" rel="noopener">totroiseGit</a>在我个人网盘 密码：wn8s，如果链接失效请告知，相关安装请自行百度或者谷歌。如需帮助请邮件。</p><p>###检测Node以及git的安装情况<br>在命令行模式下分别执行一下命令检测安装情况：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"node -v"</span></span><br></pre></td></tr></table></figure></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"npm -v"</span></span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"git --version"</span></span><br></pre></td></tr></table></figure><p>如果没有任何报错，并且给出对应的版本号则表示安装正确。<br>如果出现错误，请自行百度或者谷歌。如需帮助请邮件。<br>接着就是按照z道友的教程安装Hexo环境，以及配置gitHub项目。</p><p>###这里省略配置流程</p><p>###以下内容表示前面流程没有任何问题，进入主题修改环节</p><p>###主题修改<br>太晚了，先睡觉，明天补</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;##说在前面&lt;br&gt;本博客是使用Hexo + gitHub搭建的个人博客。其中致谢于以下俩位道友：&lt;br&gt;csdn z皓: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>博客名</title>
