@@ -191,8 +191,154 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        说在前面本博客是使用Hexo + gitHub搭建的个人博客。其中致谢于以下俩位道友：csdn z皓: 使用Hexo+github一步步搭建数以自己的博客主题提供者 yscoder:一个Material Design风格的Hexo主题。首先是Hexo+gitHub的使用安装及配置问题。由于z道友教程中内容比较详细，所以这边不做赘述。再次感谢道友提供的教程。然后第二部分是主题的安装。
-技术准备...
+        说在前面本博客是使用Hexo + gitHub搭建的个人博客。其中致谢于以下俩位道友：csdn z皓: 使用Hexo+github一步步搭建数以自己的博客主题提供者 yscoder:一个Material Design风格的Hexo主题。首先是Hexo+gitHub的使用安装及配置问题。由于z道友教程中内容比较详细，所以这边简单的重复一下。再次感谢道友提供的教程。然后第二部分是主题的安装。
+技术准备Node.js 6.x+使用本博客需要6.x+以上版本的Node.jsNode.jsNode相关安装教程请自行百度或者谷歌，如需帮助请邮件。
+GitHub通过gitHub的page来作为博客的站点，可以使用自己的服务器或者其他服务器来搭建。
+流程安装Gitgit官网totroiseGit在我个人网盘 密码：wn8s，如果链接失效请告知，相关安装请自行百度或者谷歌。如需帮助请邮件。
+检测Node以及git的安装情况在命令行模式下分别执行一下命令检测安装情况：1$ hexo new "node -v"
+1$ hexo new "npm -v"
+1$ hexo new "git --version"
+如果没有任何报错，并且给出对应的版本号则表示安装正确。如果出现错误，请自行百度或者谷歌。如需帮助请邮件。接着就是按照z道友的教程安装Hexo环境，以及配置gitHub项目。
+Hexo首先创建Blog文件夹。然后进入该文件夹，执行命令安装hexo 模块12$ cd 'your blog path'$ npm install hexo -g
+检测Hexo安装情况1$ heox -v
+确认hexo安装成功，在项目文件夹中初始化Hexo项目1$ heox init
+成功后如图所示：
+                
+                    
+                    
+                
+                
+            看到后面的“Start blogging with Hexo！” 表示hexo项目初始化成功。
+然后是Node项目的正常流程，初始化依赖的组件：1$ npm install
+首次体验Hexo123456789101112131415161718192021222324252627282930313233$ hexo gINFO  Start processingINFO  Files loaded in 239 msINFO  Generated: index.htmlINFO  Generated: archives/index.htmlINFO  Generated: fancybox/blank.gifINFO  Generated: fancybox/jquery.fancybox.jsINFO  Generated: fancybox/jquery.fancybox.pack.jsINFO  Generated: fancybox/fancybox_overlay.pngINFO  Generated: fancybox/fancybox_loading@2x.gifINFO  Generated: fancybox/fancybox_sprite.pngINFO  Generated: fancybox/fancybox_sprite@2x.pngINFO  Generated: fancybox/fancybox_loading.gifINFO  Generated: fancybox/jquery.fancybox.cssINFO  Generated: css/fonts/fontawesome-webfont.woffINFO  Generated: js/script.jsINFO  Generated: archives/2018/06/index.htmlINFO  Generated: css/style.cssINFO  Generated: archives/2018/index.htmlINFO  Generated: fancybox/helpers/jquery.fancybox-buttons.cssINFO  Generated: fancybox/helpers/jquery.fancybox-media.jsINFO  Generated: fancybox/helpers/jquery.fancybox-buttons.jsINFO  Generated: css/fonts/FontAwesome.otfINFO  Generated: fancybox/helpers/fancybox_buttons.pngINFO  Generated: css/fonts/fontawesome-webfont.eotINFO  Generated: css/fonts/fontawesome-webfont.svgINFO  Generated: fancybox/helpers/jquery.fancybox-thumbs.jsINFO  Generated: css/fonts/fontawesome-webfont.ttfINFO  Generated: fancybox/helpers/jquery.fancybox-thumbs.cssINFO  Generated: css/images/banner.jpgINFO  Generated: 2018/06/18/hello-world/index.htmlINFO  28 files generated in 521 ms
+开启服务器1234$ hexo sINFO  Start processingINFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
+到此可以正式体验Hexo了。如果失败请检查是否端口被占用问题， 如果是端口被占用，可以通过如下命令修改hexo端口:1$ hexo server -p 端口号
+如果步骤没有错的的，则最终效果如图所示：
+                
+                    
+                    
+                
+                
+            
+Github page首先呢，你需要一个GitHub账号。如果没有请跳过。。。。设置git账号：在博客根目录下运行命令行工具。推荐git自带的gitbase.
+                
+                    
+                    
+                
+                
+            设置账号：1$git config --global user.name &quot;your git name&quot;
+设置邮箱：1$git config --global user.email &quot;your git email&quot;
+创建ssh:1$ ssh-keygen -t rsa -C "your git email"
+连续三个回车，生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）。
+添加密钥到ssh-agent1$ eval "$(ssh-agent -s)"
+添加生成的SSH key到ssh-agent:1$ ssh-add ~/.ssh/id_rsa
+登录Github，点击头像下的settings，添加ssh
+                
+                    
+                    
+                
+                
+            
+新建一个new ssh key，将id_rsa.pub文件里的内容复制上去
+                
+                    
+                    
+                
+                
+            
+添加完github的 ssh key后，回到项目文件夹根目录的命令行工具：123$ ssh -T git@github.comHi Visow! You've successfully authenticated, but GitHub does not provide shell access.
+如果出现 Hi “you git name”则表示ssh添加成功！
+假如ssh-key配置失败，那么只要以下步骤就能完全解决
+首先，清除所有的key-pair：12$ ssh-add -D$ rm -r ~/.ssh
+删除你在github中的public-key
+重新生成ssh密钥对1$ ssh-keygen -t rsa -C "xxx@xxx.com"
+接下来正常操作在github上添加公钥public-key:1、首先在你的终端运行 xclip -sel c ~/.ssh/id_rsa.pub将公钥内容复制到剪切板2、在github上添加公钥时，直接复制即可3、保存
+测试：在终端 ssh -T git@github.com
+确认了ssh配置没有问题之后，到git上创建一个项目：
+                
+                    
+                    
+                
+                
+            选择 New repository，然后可以看到创建界面
+                
+                    
+                    
+                
+                
+            repository name的格式为 你git的用户名.github.io; ex：Visow.github.io选中 Initialize this repository with a readme;create repository!创建成功后复制项目的ssh
+                
+                    
+                    
+                
+                
+            
+                
+                    
+                    
+                
+                
+            
+配置Deployment:在hexo根目录下，打开 _config.yml配置文件，修改repository(在文件尾部)：1234deploy:  type: git  repository: git@github.com:Visow/Visow.github.io.git // 这里是你刚才复制的ssh  branch: master
+修改完成后需要安装一个git的拓展组建：1$ npm install hexo-deployer-git --save
+创建一篇新的博客：1$ hexo new post "你好,Hexo"
+这时候在文件夹_posts目录下将会看到已经创建的文件
+
+                
+                    
+                    
+                
+                
+            
+OK, 这时候可以生成部署了；1$ hexo d -g
+该操作会生成对应的博客和提交代码到刚才创建的git项目中；这时候访问https://“your git name”.github.io ，将会看到生成文章了：
+                
+                    
+                    
+                
+                
+            
+ 好了，到此为止，最基本的也是最全面的hexo+github搭建博客完结。接下来是indigo主题修改：
+indigo主题主题提供者 yscoder:一个Material Design风格的Hexo主题。再次感谢主题提供者 yscoder.点击上文的链接，打开主题所在的git项目；滚动页面至下方，点击文档查看：！
+安装安装很简单，在你博客的根目录，也就是Hexo的根目录下执行一下命令：1$ git clone git@github.com:yscoder/hexo-theme-indigo.git themes/indigo
+获取主题项目，安装至主题到目录下的 themes/
+进入到主题目录中, 并且获取分支12$ cd themes/indigo$ git branch
+如果只存在一个分支，可以执行下面的命令获取另一分支的主题。1234# 获取远程 card 分支，并切换$ git checkout -b card origin/card# 获取远程 master 分支，并切换$ git checkout -b master origin/master
+此命令只需执行一次，之后使用 git checkout [branch] 命令在两个主题之间切换。
+依赖安装, 这次是在hexo（博客）的根目录：Less : 主题默认使用 less 作为 css 预处理工具。1$ npm install hexo-renderer-less --save
+Feed : 用于生成 rss。1$ npm install hexo-generator-feed --save
+Json-content: 用于生成静态站点数据，用作站内搜索的数据源。1$ npm install hexo-generator-json-content --save
+QRCode: 用于生成微信分享二维码。可选，不安装时会请求 jiathis Api 生成二维码。1$ npm install hexo-helper-qrcode --save
+至此安装完成，接下来是配置：
+配置详细的配置还是看git上的文档，这边只给出一些基本的配置：开启标签页1$ hexo new page tags
+修改 hexo/source/tags/index.md 的元数据:
+layout: tagscomments: false
+开启分类页仅 card theme 支持。1$ hexo new page categories
+修改 hexo/source/categories/index.md 的元数据:
+layout: categoriescomments: false
+站点配置编辑站点配置文件，hexo/_config.yml。启用主题:1theme: indigo
+基本配置12345678#为了得到更好的使用体验，以下内容请务必填写完整，因为这些内容会在主题中得到展示。title: your titlesubtitle: your subtitledescription: your descriptionkeywords: your keywordsauthor: your nameemail: your emailurl: your site url
+feed配置在hexo/_config.yml下添加如下配置：1234feed:  type: atom  path: atom.xml  limit: 0
+jsonContent配置12345678910111213141516171819#为了节约资源，可以对 jsonContent 插件生成的数据字段进行配置，减少数据文件大小。参考 hexo-generator-json-contentjsonContent:  meta: false  pages: false  posts:    title: true    date: true    path: true    text: true    raw: false    content: false    slug: false    updated: false    comments: false    link: false    permalink: false    excerpt: false    categories: false    tags: true
+如下图所示：
+                
+                    
+                    
+                
+                
+            
+主题配置默认配置如下:1234567891011121314151617menu:  home:    text: 主页    url: /  archives:    url: /archives  tags:    url: /tags  github:    url: https://github.com/yscoder    target: _blank  weibo:    url: http://www.weibo.com/ysweb    target: _blank  link:    text: 测试    url: /
+添加新菜单项时，在 menu 下增加子属性即可。属性说明如下：
+12345menu: link:               # fontawesome图标，省略前缀，本主题前缀为 icon-，必须   text: About       # 菜单显示的文字，如果省略即默认与图标一致，首字母会转大写   url: /about       # 链接，绝对或相对路径，必须   target: _blank    # 是否跳出，省略则在当前页面打开
+fontawesome 图标已集成到主题中，你可以到 这个页面 挑选合适的图标。
+rss6.x 后移除该配置项，使用站点配置中的 feed 作为统一配置。1rss: /atom.xml
+favicon站点 logo，显示在浏览器当前标签页左上角。1favicon: /favicon.ico
+头像位于左侧菜单上方1avatar: /img/logo.jpg
+email头像下方1email: 634206017@qq.com
+color设置 Android L Chrome 浏览器状态栏颜色，不需要可去除此项或设为 false。1color: '#3F51B5'
+标签页 (old)配置标签页标题12tags:  title: 标签
+页面标题 (card theme)自定义归档、标签、分类页的大标题。123tags_title: Tagsarchives_title: Archivescategories_title: Categories
+文章摘要可以在 Markdown 文件中加
     
 
         <a href="/2018/06/18/2018-6-18/" class="post-more waves-effect waves-button">
