@@ -35,7 +35,11 @@
 <meta property="og:image" content="https://visow.github.io/2018/06/18/pomelo-1/pomelo4.png">
 <meta property="og:image" content="https://visow.github.io/2018/06/18/pomelo-1/pomelo5.png">
 <meta property="og:image" content="https://visow.github.io/2018/06/18/pomelo-1/pomelo6.png">
-<meta property="og:updated_time" content="2018-06-20T16:22:16.172Z">
+<meta property="og:image" content="https://visow.github.io/2018/06/18/pomelo-1/pomelo7.png">
+<meta property="og:image" content="https://visow.github.io/2018/06/18/pomelo-1/pomelo8.png">
+<meta property="og:image" content="https://visow.github.io/2018/06/18/pomelo-1/pomelo9.png">
+<meta property="og:image" content="https://visow.github.io/2018/06/18/pomelo-1/pomelo10.png">
+<meta property="og:updated_time" content="2018-06-21T17:17:14.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pomelo + vscode + typescript搭建可约束可调试的游戏服务端框架">
 <meta name="twitter:description" content="说在前面pomelo: 它是网易开源的一套基于Node.js的游戏服务端框架，详情请戳这里关于pomelo的种种这里不详细说。点击链接查看详情。但是由于pomelo是js项目，使用起来的时候并不是很爽，所以就有了ts的引入。 typescript: TypeScript是一种由微软开发的自由和开源的编程语言。它是JavaScript的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向">
@@ -126,7 +130,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -165,7 +169,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说在前面"><span class="post-toc-number">1.</span> <span class="post-toc-text">说在前面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#流程"><span class="post-toc-number">2.</span> <span class="post-toc-text">流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#环境安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">环境安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建一个Pomelo项目"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">新建一个Pomelo项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#改造项目为TypeScript"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">改造项目为TypeScript</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pomelo-ts-版本的调试"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">pomelo ts 版本的调试</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说在前面"><span class="post-toc-number">1.</span> <span class="post-toc-text">说在前面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#流程"><span class="post-toc-number">2.</span> <span class="post-toc-text">流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#环境安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">环境安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建一个Pomelo项目"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">新建一个Pomelo项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#改造项目为TypeScript"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">改造项目为TypeScript</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pomelo-ts-版本的调试"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">pomelo ts 版本的调试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">注意事项</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -282,7 +286,63 @@
 <p>e. 测试成果的时候到了，分别跑服务端和客户端，看看效果是不是和原来一样。</p>
 <p>在终端输如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ pomelo start</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">[2018-06-21 00:19:21.643] [INFO] pomelo - [E:\pomelo\Test\game-server\node_modules\pomelo\lib\application.js] <span class="string">"connector-server-1"</span> enter after start...</span><br><span class="line"></span><br><span class="line">[2018-06-21 00:19:21.645] [INFO] pomelo - [E:\pomelo\Test\game-server\node_modules\pomelo\lib\application.js] <span class="string">"connector-server-1"</span> finish start</span><br><span class="line"></span><br><span class="line">[2018-06-21 00:19:21.645] [INFO] pomelo - [E:\pomelo\Test\game-server\node_modules\pomelo\lib\application.js] <span class="string">"connector-server-1"</span> startup <span class="keyword">in</span> 206 ms</span><br><span class="line"></span><br><span class="line">[2018-06-21 00:19:21.646] [INFO] pomelo - [E:\pomelo\Test\game-server\node_modules\pomelo\lib\master\watchdog.js] all servers startup <span class="keyword">in</span> 513 ms</span><br></pre></td></tr></table></figure></p>
 <p>如果和原来一样），说明你的改造是成功的了。这是后可以尝试下启动前端，在测试一下，一般是OK的。<br>所以接下来时调试了。</p>
-<h3 id="pomelo-ts-版本的调试"><a href="#pomelo-ts-版本的调试" class="headerlink" title="pomelo ts 版本的调试"></a>pomelo ts 版本的调试</h3><p>~~~内容后面补充，睡觉啦。</p>
+<h3 id="pomelo-ts-版本的调试"><a href="#pomelo-ts-版本的调试" class="headerlink" title="pomelo ts 版本的调试"></a>pomelo ts 版本的调试</h3><p>PS: 有人说，打LOG是最好的调试~~</p>
+<p>本教程采用远程调试的方式。</p>
+<p>1.首先查看Node的调试参数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ node -h</span><br><span class="line"></span><br><span class="line">Usage: node [options] [ -e script | script.js | - ] [arguments]</span><br><span class="line">       node inspect script.js [arguments]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -v, --version              <span class="built_in">print</span> Node.js version</span><br><span class="line">  -e, --<span class="built_in">eval</span> script          evaluate script</span><br><span class="line">  -p, --<span class="built_in">print</span>                evaluate script and <span class="built_in">print</span> result</span><br><span class="line">  -c, --check                syntax check script without executing</span><br><span class="line">  -i, --interactive          always enter the REPL even <span class="keyword">if</span> stdin</span><br><span class="line">                             does not appear to be a terminal</span><br><span class="line">  -r, --require              module to preload (option can be repeated)</span><br><span class="line">  -                          script <span class="built_in">read</span> from stdin (default; interactive mode <span class="keyword">if</span> a tty)</span><br><span class="line">  <span class="comment"># 这个就是我们需要的调试参数（别问我怎么知道是这个的，因为有个东西叫网络~~）</span></span><br><span class="line">  --inspect[=[host:]port]    activate inspector on host:port</span><br><span class="line">                             (default: 127.0.0.1:9229)</span><br><span class="line">  --inspect-brk[=[host:]port]</span><br><span class="line">                             activate inspector on host:port</span><br><span class="line">                             and <span class="built_in">break</span> at start of user script</span><br><span class="line">  --inspect-port=[host:]port</span><br><span class="line">                             <span class="built_in">set</span> host:port <span class="keyword">for</span> inspector</span><br><span class="line">  --no-deprecation           silence deprecation warnings</span><br><span class="line">  --trace-deprecation        show stack traces on deprecations</span><br><span class="line">  --throw-deprecation        throw an exception on deprecations</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>找到pomelo项目中的config/server.json. 内容如下：<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"development"</span>:&#123;</span><br><span class="line">    <span class="attr">"connector"</span>: [</span><br><span class="line">    &#123;<span class="attr">"id"</span>: <span class="string">"connector-server-1"</span>, <span class="attr">"host"</span>: <span class="string">"127.0.0.1"</span>, <span class="attr">"port"</span>: <span class="number">3150</span>, <span class="attr">"clientHost"</span>: <span class="string">"127.0.0.1"</span>, <span class="attr">"clientPort"</span>: <span class="number">3010</span>, <span class="attr">"frontend"</span>: <span class="literal">true</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"production"</span>:&#123;</span><br><span class="line">    <span class="attr">"connector"</span>: [</span><br><span class="line">    &#123;<span class="attr">"id"</span>: <span class="string">"connector-server-1"</span>, <span class="attr">"host"</span>: <span class="string">"127.0.0.1"</span>, <span class="attr">"port"</span>: <span class="number">3150</span>, <span class="attr">"clientHost"</span>: <span class="string">"127.0.0.1"</span>, <span class="attr">"clientPort"</span>: <span class="number">3010</span>, <span class="attr">"frontend"</span>: <span class="literal">true</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>因为pomelo每一个服务器都是一个进程，所以调试的时候只能选择其中一个进行调试。虽然比较蛋疼，但是用习惯了还是好的。<br>pomelo在启动服务器的时候会将这些参数传递给Node…应该是这样的，嗯，应该是…</p>
+<p>修改 “connector”服务器的配置，添加调试参数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"args"</span>: <span class="string">" --inspect=127.0.0.1:16772"</span></span><br></pre></td></tr></table></figure></p>
+<p>所以如下所示：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"development"</span>:&#123;</span><br><span class="line">    <span class="attr">"connector"</span>: [</span><br><span class="line">    &#123;<span class="attr">"id"</span>: <span class="string">"connector-server-1"</span>, <span class="attr">"host"</span>: <span class="string">"127.0.0.1"</span>, <span class="attr">"port"</span>: <span class="number">3150</span>, <span class="attr">"clientHost"</span>: <span class="string">"127.0.0.1"</span>, <span class="attr">"clientPort"</span>: <span class="number">3010</span>, <span class="attr">"frontend"</span>: <span class="literal">true</span>, <span class="attr">"args"</span>: <span class="string">" --inspect=127.0.0.1:16772"</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"production"</span>:&#123;</span><br><span class="line">    <span class="attr">"connector"</span>: [</span><br><span class="line">    &#123;<span class="attr">"id"</span>: <span class="string">"connector-server-1"</span>, <span class="attr">"host"</span>: <span class="string">"127.0.0.1"</span>, <span class="attr">"port"</span>: <span class="number">3150</span>, <span class="attr">"clientHost"</span>: <span class="string">"127.0.0.1"</span>, <span class="attr">"clientPort"</span>: <span class="number">3010</span>, <span class="attr">"frontend"</span>: <span class="literal">true</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个表示我们队服务器connector开启了远程调试功能。</p>
+<ol start="2">
+<li>然后配置VSCode调试参数：<br>如图所示：<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2018/06/18/pomelo-1/pomelo7.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+先选择侧边栏的调试按钮，然后选择上方的配置按钮，在弹出的面板中选择Node.js, 添加launch.json<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2018/06/18/pomelo-1/pomelo8.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+修改配置如下：<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // 使用 IntelliSense 了解相关属性。 </span><br><span class="line">    // 悬停以查看现有属性的描述。</span><br><span class="line">    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span><br><span class="line">    "version": "0.2.0",</span><br><span class="line">    "configurations": [</span><br><span class="line">        &#123;</span><br><span class="line">            "type": "node", // 调试的类型</span><br><span class="line">            "name": "pomelo remote", // 名称</span><br><span class="line">            "port": 16772, // 监听的端口（配置在server.json中的调试端口）</span><br><span class="line">            "sourceMaps": true, // 开启源映射</span><br><span class="line">            "outFiles": [ // js脚本目录</span><br><span class="line">                "$&#123;workspaceRoot&#125;/app",</span><br><span class="line">            ],</span><br><span class="line">            </span><br><span class="line">            "request": "attach", // 请求配置的类型，启动或者附加，我们用的是附加</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>OK, 配置完成保存，然后开始开开心心的测试一下。</p>
+<ol start="3">
+<li>测试：<br>a. 启动game-server<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ pomelo start</span><br><span class="line"><span class="comment"># ....</span></span><br><span class="line">Debugger listening on ws://127.0.0.1:16772/202b2f5e-3671-4fce-aca9-d2cdf175bc69</span><br><span class="line">For <span class="built_in">help</span> see https://nodejs.org/en/docs/inspector</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">[2018-06-22 01:01:19.776] [INFO] pomelo - [E:\pomelo\Test\game-server\node_modules\pomelo\lib\master\watchdog.js] all servers startup <span class="keyword">in</span> 884 ms</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果终端输出<br>Debugger listening on ws://127.0.0.1:16772/202b2f5e-3671-4fce-aca9-d2cdf175bc69<br>For help see <a href="https://nodejs.org/en/docs/inspector" target="_blank" rel="noopener">https://nodejs.org/en/docs/inspector</a><br>表示已经成功的启动了监听。</p>
+<p>b. 打开前端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Windows PowerShell</span><br><span class="line">版权所有 (C) Microsoft Corporation。保留所有权利。</span><br><span class="line"></span><br><span class="line">PS E:\pomelo\Test\game-server&gt; <span class="built_in">cd</span> ..</span><br><span class="line">PS E:\pomelo\Test&gt; <span class="built_in">cd</span> .\web-server\</span><br><span class="line">PS E:\pomelo\Test\web-server&gt; node app</span><br><span class="line">Warning: express.createServer() is deprecated, express</span><br><span class="line">applications no longer inherit from http.Server,</span><br><span class="line">please use:</span><br><span class="line"></span><br><span class="line">  var express = require(<span class="string">"express"</span>);</span><br><span class="line">  var app = express();</span><br><span class="line"></span><br><span class="line">connect.multipart() will be removed <span class="keyword">in</span> connect 3.0</span><br><span class="line">visit https://github.com/senchalabs/connect/wiki/Connect-3.0 <span class="keyword">for</span> alternatives</span><br><span class="line">connect.limit() will be removed <span class="keyword">in</span> connect 3.0</span><br><span class="line">Web server has started.</span><br><span class="line">Please <span class="built_in">log</span> on http://127.0.0.1:3001/index.html</span><br></pre></td></tr></table></figure></p>
+<p>c. 按F5启动调试;</p>
+<p>在如图的位置添加断点（app_types/servers/handler/entryHandler.ts）<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2018/06/18/pomelo-1/pomelo9.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>启动前端：<a href="http://127.0.0.1:3001/index.html" target="_blank" rel="noopener">http://127.0.0.1:3001/index.html</a><br>点击“Test Game Server”<br>这时候可以看到VSCode中的断点已命中的效果：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2018/06/18/pomelo-1/pomelo10.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>恭喜你，说明你成功了。</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>如果没有命中断点，请对着教程中的步骤检查下流程，看看哪里有不一样的地方，或者下方留言问题。<br>注意一下几个地方：</p>
+<ol>
+<li>tsconfig.json配置文件中的“outDir”和launch.json中的 “outFiles”中的路径请保持一致。</li>
+<li>tsconfig.json配置中需要添加“sourceMap”，这是为了在生成时添加.map文件，以至于调试的时候能通过js查找到对应的ts代码。</li>
+<li>launch.json配置中添加“sourceMaps”和“outFiles”将调试的js脚本定位到js的生成目录，以便于映射到对应的ts代码。</li>
+<li>launch.json配置中的端口请和server.json配置中的端口保持一致。</li>
+</ol>
 
         </div>
 
@@ -291,7 +351,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-06-20T16:22:16.172Z" itemprop="dateUpdated">2018-06-21 00:22:16</time>
+    最終更新：<time datetime="2018-06-21T17:17:14.660Z" itemprop="dateUpdated">2018-06-22 01:17:14</time>
 </span><br>
 
 
@@ -477,7 +537,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
