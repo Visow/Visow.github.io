@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://Visow.github.io/"/>
-  <updated>2018-07-01T16:05:37.407Z</updated>
+  <updated>2018-07-08T14:04:49.747Z</updated>
   <id>https://Visow.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nodejs-new-compoment</title>
+    <link href="https://Visow.github.io/2018/07/08/nodejs-new-compoment/"/>
+    <id>https://Visow.github.io/2018/07/08/nodejs-new-compoment/</id>
+    <published>2018-07-08T13:41:07.000Z</published>
+    <updated>2018-07-08T14:04:49.747Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="致歉自己"><a href="#致歉自己" class="headerlink" title="致歉自己"></a>致歉自己</h2><p>这周比较忙，没有认真的写博客，但是还是抽空水一篇，也是最近掌握的一个小知识点。</p><h2 id="Node-js项目安装模块"><a href="#Node-js项目安装模块" class="headerlink" title="Node.js项目安装模块"></a>Node.js项目安装模块</h2><p>玩过Node.js的都知道肯定是 npm install packagename; 但是对后面的参数估计有些模糊，所以做个记录：</p><h3 id="指定版本号"><a href="#指定版本号" class="headerlink" title="指定版本号"></a>指定版本号</h3><p>安装模块如不指定版本号 默认会安装最新的版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install packagename 0.0.1</span><br></pre></td></tr></table></figure></p><p>安装指定版本的模块</p><h3 id="初始化Node-js项目"><a href="#初始化Node-js项目" class="headerlink" title="初始化Node.js项目"></a>初始化Node.js项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure><p>这个命令会在当前目录生成一个package.json文件，这个文件中会记录一些关于项目的信息，比如：项目的作者，git地址，入口文件、命令设置、项目名称和版本号等等，一般情况下这个文件是必须要有的，方便后续的项目添加和其他开发人员的使用。</p><h3 id="保存安装模块的信息到package-json中"><a href="#保存安装模块的信息到package-json中" class="headerlink" title="保存安装模块的信息到package.json中"></a>保存安装模块的信息到package.json中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install packagename --save 或 -S</span><br></pre></td></tr></table></figure><p>–save、-S参数意思是把模块的版本信息保存到dependencies（生产环境依赖）中，即你的package.json文件的dependencies字段中；<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install packagename --save-dev 或 -D</span><br></pre></td></tr></table></figure></p><p>–save-dev 、 -D参数意思是吧模块版本信息保存到devDependencies（开发环境依赖）中，即你的package.json文件的devDependencies字段中；<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install packagename --save-optional 或 -O</span><br></pre></td></tr></table></figure></p><p>–save-optional 、 -O参数意思是把模块安装到optionalDependencies（可选环境依赖）中，即你的package.json文件的optionalDependencies字段中。（本人菜鸟一枚，一直也没理解这个，不过看到了就记录一下吧，万一哪天用到了，说不准就懂了……）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install packagename --save-exact 或 -E</span><br></pre></td></tr></table></figure></p><p>–save-exact 、 -E参数的意思是精确的安装指定版本的模块，细心的同学会发现dependencies字段里每个模块版本号前面的^不见鸟。。。<br>如果你打开的是别人的项目，这个时候一般是没有任何依赖包的，但是所以需要的包已在package.json里面写好了，这个时候我们就可以使用npm install来安装所有项目中需要的依赖包了</p><h3 id="安装到全局"><a href="#安装到全局" class="headerlink" title="安装到全局"></a>安装到全局</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install packagename -g 或 --global</span><br></pre></td></tr></table></figure><p>安装全局的模块（不加参数的时候默认安装本地模块）</p><h3 id="查看所有已经安装的模块"><a href="#查看所有已经安装的模块" class="headerlink" title="查看所有已经安装的模块"></a>查看所有已经安装的模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm list 或 npm ll 或 npm la 或 npm ls</span><br></pre></td></tr></table></figure><p>查看所有已经安装的模块 ll 、 ls 、 la 三个命令意思都一样 但是列表的展示方式不一样 喜欢用哪个就看个人喜好了,不懂的同学可以每个都去试下。</p><h3 id="卸载已安装"><a href="#卸载已安装" class="headerlink" title="卸载已安装"></a>卸载已安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall packagename [options]</span><br></pre></td></tr></table></figure><p>卸载已经安装的模块，后面的options参数意思与安装时候的意思一样,与这个命令相同的还有npm remove 、npm rm、npm r 、 npm un 、 npm unlink 这几个命令功能和npm uninstall基本一样，个人觉得没什么区别。</p><h3 id="查看过时模块"><a href="#查看过时模块" class="headerlink" title="查看过时模块"></a>查看过时模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm outdated</span><br></pre></td></tr></table></figure><p>这个命令会列出所有已经过时了的模块，对于已经过时了的模块可以使用下面的命令去更新</p><h3 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update [-g]</span><br></pre></td></tr></table></figure><p>更新已经安装的模块(或全局的模块)</p><h3 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="built_in">help</span> <span class="string">'命令'</span></span><br></pre></td></tr></table></figure><p>查看某条命令的详细帮助</p><h3 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm root</span><br></pre></td></tr></table></figure><p>查看命令的绝对路径</p><h3 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config</span><br></pre></td></tr></table></figure><p>设置npm命令的配置路径，这个命令一般用于设置代理，毕竟大部分都是国外的模块，不过个人还是比较喜欢用cnpm 这个命令是用的淘宝的镜像，用法与npm一样，速度还可以。</p><p>除去以上的这些命令外，经常还能见到一些npm start、npm deploy、 npm build等等之类的命令，这些一般都是在package.json 中自定义的一些启动、重启、停止服务之类的命令。可以在package.json文件的scripts字段里自定义。例如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",</span><br><span class="line">    "build": "webpack",</span><br><span class="line">    "start": "webpack-dev-server main.js",</span><br><span class="line">    "deploy": "set NODE_ENV=production"</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p><p>关于package.json的详细文档，有兴趣的同学可以参考<a href="https://github.com/ericdum/mujiang.info/issues/6/" target="_blank" rel="noopener">《package.json中文文档》</a>；</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;致歉自己&quot;&gt;&lt;a href=&quot;#致歉自己&quot; class=&quot;headerlink&quot; title=&quot;致歉自己&quot;&gt;&lt;/a&gt;致歉自己&lt;/h2&gt;&lt;p&gt;这周比较忙，没有认真的写博客，但是还是抽空水一篇，也是最近掌握的一个小知识点。&lt;/p&gt;
+&lt;h2 id=&quot;Node-js项目安
+      
+    
+    </summary>
+    
+    
+      <category term="Node.js" scheme="https://Visow.github.io/tags/Node-js/"/>
+    
+  </entry>
   
   <entry>
     <title>给本博客添加评论</title>
