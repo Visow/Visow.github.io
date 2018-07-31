@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>pomelo.d.ts(2) | Visow Blog | 772673848@qq.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="pomelo">
+    <meta name="description" content="前一篇:pomelo.d.ts 接着上一篇123456789101112131415161718192021222324252627282930313233343536373839404142434445declare class Session &amp;#123;    public readonly id: number; //id是这个session的id，是全局唯一的，一般使用自增的方式来生成;">
+<meta name="keywords" content="pomelo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pomelo.d.ts(2)">
+<meta property="og:url" content="https://Visow.github.io/2018/07/31/pomelo-3/index.html">
+<meta property="og:site_name" content="Visow Blog">
+<meta property="og:description" content="前一篇:pomelo.d.ts 接着上一篇123456789101112131415161718192021222324252627282930313233343536373839404142434445declare class Session &amp;#123;    public readonly id: number; //id是这个session的id，是全局唯一的，一般使用自增的方式来生成;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-31T14:17:08.819Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pomelo.d.ts(2)">
+<meta name="twitter:description" content="前一篇:pomelo.d.ts 接着上一篇123456789101112131415161718192021222324252627282930313233343536373839404142434445declare class Session &amp;#123;    public readonly id: number; //id是这个session的id，是全局唯一的，一般使用自增的方式来生成;">
+    
+        <link rel="alternate" type="application/atom+xml" title="Visow Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Visow</h5>
+          <a href="mailto:772673848@qq.com" title="772673848@qq.com" class="mail">772673848@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                列表
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Visow" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">pomelo.d.ts(2)</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">pomelo.d.ts(2)</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-31T14:11:25.000Z" itemprop="datePublished" class="page-time">
+  2018-07-31
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前一篇"><span class="post-toc-number">1.</span> <span class="post-toc-text">前一篇:</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#接着上一篇"><span class="post-toc-number">2.</span> <span class="post-toc-text">接着上一篇</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-pomelo-3"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">pomelo.d.ts(2)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-07-31 22:11:25" datetime="2018-07-31T14:11:25.000Z"  itemprop="datePublished">2018-07-31</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前一篇"><a href="#前一篇" class="headerlink" title="前一篇:"></a>前一篇:</h2><p><a href="https://Visow.github.io/2018/07/17/pomelo-2/">pomelo.d.ts</a></p>
+<h2 id="接着上一篇"><a href="#接着上一篇" class="headerlink" title="接着上一篇"></a>接着上一篇</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">class</span> Session &#123;</span><br><span class="line">    <span class="keyword">public</span> readonly id: <span class="built_in">number</span>; <span class="comment">//id是这个session的id，是全局唯一的，一般使用自增的方式来生成;</span></span><br><span class="line">    <span class="keyword">public</span> readonly frontendId: <span class="built_in">string</span>; <span class="comment">//frontendId是维护这个session的前端服务器的id；</span></span><br><span class="line">    <span class="keyword">public</span> readonly uid: <span class="built_in">string</span>; <span class="comment">//uid是这个session所绑定的用户id;</span></span><br><span class="line">    <span class="keyword">public</span> settings : <span class="built_in">any</span>; <span class="comment">// settings维护一个key-value map，用来描述session的一些自定义属性</span></span><br><span class="line">    <span class="keyword">public</span> __socket__ : <span class="built_in">any</span>; <span class="comment">//__socket__是底层原生socket的引用;</span></span><br><span class="line">    <span class="keyword">public</span> __state__ : <span class="built_in">any</span>; <span class="comment">//__state__用来指明当前session的生命周期状态。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">class</span> FrontendSession &#123;</span><br><span class="line">    <span class="keyword">public</span> readonly id: <span class="built_in">number</span>;</span><br><span class="line">    <span class="keyword">public</span> readonly frontendId: <span class="built_in">string</span>;</span><br><span class="line">    <span class="keyword">public</span> readonly uid: <span class="built_in">string</span>;</span><br><span class="line">    <span class="keyword">public</span> settings : <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">class</span> BackendSession &#123;</span><br><span class="line">    <span class="keyword">public</span> readonly id: <span class="built_in">number</span>;</span><br><span class="line">    <span class="keyword">public</span> readonly frontendId: <span class="built_in">string</span>;</span><br><span class="line">    <span class="keyword">public</span> readonly uid: <span class="built_in">string</span>;</span><br><span class="line">    <span class="keyword">public</span> settings : <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">interface</span> Plugin &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">interface</span> Crons &#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Next &#123;</span><br><span class="line">    (err: <span class="built_in">Error</span>, ...args) : <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Component &#123;</span><br><span class="line">    start(cb: <span class="built_in">Function</span>);</span><br><span class="line">    afterStart(cb: <span class="built_in">Function</span>);</span><br><span class="line">    stop(force, cb: <span class="built_in">Function</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">abstract</span> <span class="keyword">class</span> Msg &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">abstract</span> <span class="keyword">class</span> ReqMsg <span class="keyword">extends</span> Msg &#123;</span><br><span class="line">    __route__ : <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">abstract</span> <span class="keyword">class</span> ResMsg <span class="keyword">extends</span> Msg &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>有一些类目前还不清楚怎么整理，所以暂时先这样。以后如果有改动有空的话，会补充。谢谢。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-07-31T14:17:08.819Z" itemprop="dateUpdated">2018-07-31 22:17:08</time>
+</span><br>
+
+
+        
+        感觉有用的亲给个赞，转载请著名出处！<a href="/2018/07/31/pomelo-3/" target="_blank" rel="external">https://Visow.github.io/2018/07/31/pomelo-3/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://Visow.github.io">
+            <img src="/img/avatar.jpg" alt="Visow">
+            Visow
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pomelo/">pomelo</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://Visow.github.io/2018/07/31/pomelo-3/&title=《pomelo.d.ts(2)》 — Visow Blog&pic=https://Visow.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://Visow.github.io/2018/07/31/pomelo-3/&title=《pomelo.d.ts(2)》 — Visow Blog&source=Visow 个人博客。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://Visow.github.io/2018/07/31/pomelo-3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《pomelo.d.ts(2)》 — Visow Blog&url=https://Visow.github.io/2018/07/31/pomelo-3/&via=https://Visow.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://Visow.github.io/2018/07/31/pomelo-3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/17/pomelo-2/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">pomelo.d.ts</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="comments" id="comments">
+        <!-- 来必力City版安装代码 -->
+        <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQ1OC8xMzk5MA==">
+        <script type="text/javascript">
+            (function(d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+            
+                if (typeof LivereTower === 'function') { return; }
+            
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+        </div>
+        <!-- City版安装代码已完成 -->
+    </section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Visow &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://Visow.github.io/2018/07/31/pomelo-3/&title=《pomelo.d.ts(2)》 — Visow Blog&pic=https://Visow.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://Visow.github.io/2018/07/31/pomelo-3/&title=《pomelo.d.ts(2)》 — Visow Blog&source=Visow 个人博客。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://Visow.github.io/2018/07/31/pomelo-3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《pomelo.d.ts(2)》 — Visow Blog&url=https://Visow.github.io/2018/07/31/pomelo-3/&via=https://Visow.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://Visow.github.io/2018/07/31/pomelo-3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://Visow.github.io/2018/07/31/pomelo-3/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
